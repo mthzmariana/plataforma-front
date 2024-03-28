@@ -1,0 +1,106 @@
+  /* .prueba{
+        background-color: #b1daf7;
+    }   */
+    @font-face {
+        font-family: 'PlusJakartaSans-Bold';
+        src: url('scr/Fonts/PlusJakartaSans-Bold.ttf') format('truetype');
+    }
+    
+    @font-face {
+    font-family: 'NotoSansOriya-Medium';
+    src: url('scr/Fonts/NotoSansOriya-Medium.ttf') format('truetype');
+    }
+    
+    @font-face {
+    font-family: 'NotoSansOriya-Light';
+    src: url('scr/Fonts/NotoSansOriya-Light.ttf') format('truetype');
+    }
+    .container-rg{
+        background-image: url('../../assets/fondo.png');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-wrap: wrap;
+    }
+    .form-rg{
+        flex: 1;
+        z-index: 1;
+        max-width: 350px;
+        padding: 45px;
+        outline: 0;
+        text-align: left;
+        margin-right: 200px;
+    }
+    .img-lg{
+        flex: 1;
+    }
+    h1{
+        font-family: 'PlusJakartaSans-Bold', sans-serif;
+        color:#427aa1;
+    }
+    label{
+        font-family: 'NotoSansOriya-Medium', sans-serif;
+        color: #427aa1;
+        font-size: 20px;
+    }
+    .input-box {
+        font-family: 'NotoSansOriya-Light', sans-serif;
+        outline: 0;
+        background-color: #ebf2fa;
+        width: 100%;
+        border: 1.5px solid #427aa1;
+        color: #427aa1;
+        border-radius: 20px;
+        margin: 15px 0 15px 0;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 15px;
+    }
+    .buttons{
+        font-family: 'NotoSansOriya-Light', sans-serif;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .primary-button {
+        width: 48%;
+        margin-right: 2px;
+        cursor: pointer;
+        background: #427aa1;
+        color: #e3f2fd;
+        border: none;
+        border-radius: 15px;
+        padding: 10px 0px;
+        font-size: 16px;
+        transition: all .3s ease;
+    }
+    .second-button {
+        width: 48%;
+        margin-left: 2px;
+        cursor: pointer;
+        background: #ffffff;
+        border: 1.5px solid #427aa1;
+        color: #427aa1;
+        border-radius: 15px;
+        padding: 10px 0px;
+        font-size: 16px;
+        transition: all .3s ease;
+    }
+
+    .primary-button:hover {
+        transform: scale(1.125); 
+        filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+    }
+    .second-button:hover {
+        transform: scale(1.125);
+        border: 1.5px solid #427aa1;
+        filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+    }
+
+    @media (max-width: 600px) {
+        .form-rg {
+            margin-right: 0; 
+        }
+    }

@@ -1,0 +1,26 @@
+    .container-sm{
+        background-image: url('../../assets/fondo2.png');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-wrap: wrap;
+    }
+    .form-sm{
+        flex: 1;
+        z-index: 1;
+        max-width: 350px;
+        padding: 45px;
+        outline: 0;
+        text-align: left;
+    }
+    .img-sm{
+        text-align: center;
+    }
+    .h1-sm{
+        font-family: 'PlusJakartaSans-Bold', sans-serif;
+        color:#427aa1;
+        text-align: center;
+    }

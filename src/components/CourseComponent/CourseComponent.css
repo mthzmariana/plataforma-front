@@ -48,7 +48,9 @@
         padding: 0 15px 0 20px;
     }
 
-    th:last-child,
+    th:last-child{
+        padding: 0;
+    }
     td:last-child {
         padding: 0 0 0 20px;
     }

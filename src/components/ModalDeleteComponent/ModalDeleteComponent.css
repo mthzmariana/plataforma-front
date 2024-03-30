@@ -20,6 +20,10 @@ h2{
     font-family: 'PlusJakartaSans-Bold', sans-serif;
     color:#427aa1;
 }
+.parrafo{
+    font-family: 'PlusJakartaSans-Bold', sans-serif;
+    color:#427aa1;
+}
 
 label{
     font-family: 'NotoSansOriya-Medium', sans-serif;
@@ -76,7 +80,7 @@ label{
 .modal-buttons{
     text-align: right;
 }
-.save-button {
+.delete-button {
     width: 80px;
     margin-right: 2px;
     cursor: pointer;

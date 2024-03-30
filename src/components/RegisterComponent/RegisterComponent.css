@@ -60,6 +60,7 @@
         font-size: 15px;
     }
     .buttons{
+        text-align: center;
         font-family: 'NotoSansOriya-Light', sans-serif;
         margin-top: 10px;
         width: 100%;

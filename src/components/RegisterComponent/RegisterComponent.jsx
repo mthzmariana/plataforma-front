@@ -6,14 +6,14 @@ function RegisterComponent(props){
 
     const [name, getName] = useState("");
     const [email, getEmail] = useState("");
-    const [age, getAge] = useState(0);
+    const [edad, getEdad] = useState(0);
     const [password, getPassword] = useState("");
     const getData = () => {
 
         const objectToBack ={
             name: name,
             email: email,
-            age: age,
+            edad: edad,
             password: password
         };
 
@@ -25,7 +25,7 @@ function RegisterComponent(props){
             body: JSON.stringify(objectToBack),
         };
 
-        fetch("http://localhost:4000/insert-users", settings)
+        fetch("http://localhost:4000/register", settings)
         .then((response)=>{
             if(response.ok){
             return response.json();
@@ -89,7 +89,7 @@ function RegisterComponent(props){
                     id="inputAge" 
                     placeholder="21"
                     onChange={(event)=>{
-                    getAge(event.target.value);
+                    getEdad(event.target.value);
                     }}
                     />
                 </div>

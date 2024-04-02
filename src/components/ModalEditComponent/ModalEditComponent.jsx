@@ -55,7 +55,7 @@ export default function ModalEdit({ setShowModalEdit }){
                         </div>
                         <div>
                             <input className="input-box" 
-                            type="numer" 
+                            type="number" 
                             name="inputCalf3"
                             id="inputCalf3" 
                             onChange={(event)=>{

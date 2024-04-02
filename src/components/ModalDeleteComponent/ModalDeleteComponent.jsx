@@ -27,7 +27,7 @@ export default function ModalDelete({ setShowModalDelete }){
 
                         <div className="modal-buttons">
                             <button className="delete-button" >
-                            Borrar
+                            Eliminar
                             </button>
 
                             <button className="close-button" onClick={toggleModalDelete}>

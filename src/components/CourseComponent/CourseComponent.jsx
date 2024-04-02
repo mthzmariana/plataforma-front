@@ -7,7 +7,7 @@ import ModalDelete from "../ModalDeleteComponent/ModalDeleteComponent";
 
 function CourseComponent(props) {
     const [calificaciones, setCalificaciones] = useState([]);
-    const [showModalEdit, setShowModalEdit] = useState(false); // Estado para controlar la visibilidad del modal
+    const [showModalEdit, setShowModalEdit] = useState(false); 
     const [showModalDelete, setShowModalDelete] = useState(false); 
 
     useEffect(() => {

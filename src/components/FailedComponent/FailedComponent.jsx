@@ -1,21 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import "./CourseComponent.css";
-import EditIcon from "../../icons/editIcon.jsx";
-import DeleteIcon from "../../icons/deleteIcon.jsx";
-import ModalEdit from "../ModalEditComponent/ModalEditComponent";
-import ModalDelete from "../ModalDeleteComponent/ModalDeleteComponent";
-import ModalNew from "../ModalNewComponent/ModalNewComponent";
+import "./FailedComponent.css";
 
-function CourseComponent(props) {
+function FailedComponent(props) {
     const [calificaciones, setCalificaciones] = useState([]);
-    const [showModalEdit, setShowModalEdit] = useState(false); 
-    const [showModalDelete, setShowModalDelete] = useState(false); 
-    const [showModalNew, setShowModalNew] = useState(false); 
 
     useEffect(() => {
         fetchCalificaciones();
     }, []);
-
+ 
     const fetchCalificaciones = async () => {
         try {
             const response = await fetch('http://localhost:4000/calificaciones');
@@ -56,15 +48,7 @@ function CourseComponent(props) {
                     <td>{email}</td>
                     <td>{calificaciones['Bases de datos'] || '-'}</td>
                     <td>{calificaciones['Modelado 3D'] || '-'}</td>
-                    <td>{calificaciones['Programación web'] || '-'}</td>
-                    <td className='td-last-cr'>
-                        <button className="iconButton" onClick={() => setShowModalEdit(true)}>
-                            <EditIcon />
-                        </button>
-                        <button className="iconButton" onClick={() => setShowModalDelete(true)}>
-                            <DeleteIcon />
-                        </button>
-                    </td>
+                    <td className='td-last-rp'>{calificaciones['Programación web'] || '-'}</td>
                 </tr>
             );
         });
@@ -73,19 +57,18 @@ function CourseComponent(props) {
     };
 
     return (
-        <div className='container-cr'>
+        <div className='container-rp'>
             <div>
-                <h1 className='h1-cr'>Calificaciones</h1>
+                <h1 className='h1-rp'>Alumnos con materias reprobadas</h1>
             </div>
-            <table className='table-cr'>
+            <table className='table-rp'>
                 <thead>
-                    <tr className='thead-tr-first-cr'>
+                    <tr className='thead-tr-first-rp'>
                         <th>Nombre</th>
                         <th>Correo</th>
                         <th>Base de datos</th>
                         <th>Modelado 3D</th>
                         <th>Programación web</th>
-                        <th className='thead-tr-th-last'>Acción</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -97,15 +80,9 @@ function CourseComponent(props) {
                     </tr>
                 </tfoot>
             </table>
-            {showModalEdit && <ModalEdit setShowModalEdit={setShowModalEdit} />} {/* Renderiza el modal solo si showModalEdit es true */}
-            {showModalDelete && <ModalDelete setShowModalDelete={setShowModalDelete} />}
 
-            <div className='div-button'>
-                <button className='button-lg' onClick={() => setShowModalNew(true)}>Crear nuevas calificaciones</button>
-            </div>
-            {showModalNew && <ModalNew setShowModalNew={setShowModalNew} />}
         </div>
     );
 }
 
-export default CourseComponent;
+export default FailedComponent;

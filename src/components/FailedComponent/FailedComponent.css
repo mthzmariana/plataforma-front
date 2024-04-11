@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'PlusJakartaSans-Bold';
+    src: url('scr/Fonts/PlusJakartaSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NotoSansOriya-Medium';
+    src: url('scr/Fonts/NotoSansOriya-Medium.ttf') format('truetype');
+}
+
+.container-rp {
+    background-color: #ebf2fa; 
+    height: 100vh;
+}
+
+.h1-rp{
+    margin-top: 0%;
+    padding: 50px;
+    text-align: center;
+}
+.table-rp {
+    width: 900px;
+    margin: auto;
+    background-color: #ffffff; 
+    text-align: left;
+    line-height: 25px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 5px solid #427aa1;
+    border-radius: 15px;
+}
+
+.thead-tr-first-rp{
+    background: #427aa1;
+    color: #fff;
+    border: none;
+}
+tbody tr:hover {
+    background-color: #e4eef9; 
+    cursor: pointer;
+}
+
+th:first-child,
+td:first-child {
+    padding: 0 15px 0 20px;
+}
+
+th:last-child{
+    padding: 0;
+}
+.td-last-rp{
+    padding: 5px;
+}
+
+th {
+    font-family: 'NotoSansOriya-Medium', sans-serif;
+}
+
+td{
+    font-family: 'NotoSansOriya-Light', sans-serif;
+    padding: 5px;
+}
+
+thead tr:last-child th {
+    border-bottom: 3px solid #ddd;
+}
+
+tbody td {
+    border-bottom: 1px solid #ddd;
+}
+
+tfoot td {
+    padding: 8px 8px 8px 18px !important;
+    
+}
+
+.iconButton {
+    background-color: #ffffff; 
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 4px;
+    display: inline-block;
+    cursor: pointer;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    transition: background-color 0.3s ease;
+}
+.iconButton:hover {
+    transform: scale(1.125);
+    filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+    /* background-color: #ebf2fa; */
+}
+.iconButton svg {
+    vertical-align: middle;
+    /* margin-right: 8px; */
+}
+.div-button{
+    text-align: center;
+}
+.button-lg{
+    width: 220px;
+    margin: 20px;
+    cursor: pointer;
+    background: #427aa1;
+    color: #e3f2fd;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 0px;
+    font-size: 16px;
+    transition: all .3s ease;
+}
+.button-lg:hover {
+    transform: scale(1.125); 
+    filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+}

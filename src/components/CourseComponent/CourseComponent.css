@@ -8,17 +8,17 @@
         src: url('scr/Fonts/NotoSansOriya-Medium.ttf') format('truetype');
     }
 
-    .container-rp {
+    .container-cr {
         background-color: #ebf2fa; 
         height: 100vh;
     }
   
-    .h1-rp{
+    .h1-cr{
         margin-top: 0%;
         padding: 50px;
         text-align: center;
     }
-    table {
+    .table-cr {
         width: 900px;
         margin: auto;
         background-color: #ffffff; 
@@ -30,12 +30,12 @@
         border-radius: 15px;
     }
 
-    thead tr:first-child {
+    .thead-tr-first-cr{
         background: #427aa1;
         color: #fff;
         border: none;
     }
-    thead tr th:last-child{
+    .thead-tr-th-last{
         text-align: center;
     }
     tbody tr:hover {
@@ -51,7 +51,7 @@
     th:last-child{
         padding: 0;
     }
-    td:last-child {
+    .td-last-cr {
         padding: 0 0 0 20px;
     }
 
@@ -97,5 +97,22 @@
         vertical-align: middle;
         /* margin-right: 8px; */
     }
-
-    /*Modal*/
+    .div-button{
+        text-align: center;
+    }
+    .button-lg{
+        width: 220px;
+        margin: 20px;
+        cursor: pointer;
+        background: #427aa1;
+        color: #e3f2fd;
+        border: none;
+        border-radius: 15px;
+        padding: 10px 0px;
+        font-size: 16px;
+        transition: all .3s ease;
+    }
+    .button-lg:hover {
+        transform: scale(1.125); 
+        filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+    }

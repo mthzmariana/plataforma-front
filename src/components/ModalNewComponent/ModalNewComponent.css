@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'PlusJakartaSans-Bold';
+    src: url('scr/Fonts/PlusJakartaSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+font-family: 'NotoSansOriya-Medium';
+src: url('scr/Fonts/NotoSansOriya-Medium.ttf') format('truetype');
+}
+
+@font-face {
+font-family: 'NotoSansOriya-Light';
+src: url('scr/Fonts/NotoSansOriya-Light.ttf') format('truetype');
+}
+
+/* body.active-modal {
+    overflow-y: hidden;
+} */
+h2{
+    font-family: 'PlusJakartaSans-Bold', sans-serif;
+    color:#427aa1;
+}
+
+label{
+    font-family: 'NotoSansOriya-Medium', sans-serif;
+    color: #427aa1;
+    font-size: 20px;
+}
+
+.input-box {
+    font-family: 'NotoSansOriya-Light', sans-serif;
+    outline: 0;
+    background-color: #ebf2fa;
+    width: 100%;
+    border: 1.5px solid #427aa1;
+    color: #427aa1;
+    border-radius: 20px;
+    margin: 15px 0 15px 0;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.btn-modal {
+    padding: 10px 20px;
+    display: block;
+    margin: 100px auto 0;
+    font-size: 18px;
+}
+
+.modal-new {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.overlay {
+    background: rgba(49,49,49,0.8);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+.modal-content-n {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 15px;
+    max-width: 350px;
+    min-width: 300px;
+    margin-top: 50px;
+}
+.modal-buttons{
+    text-align: right;
+}
+.save-button {
+    width: 80px;
+    margin-right: 2px;
+    cursor: pointer;
+    background: #427aa1;
+    color: #e3f2fd;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 0px;
+    font-size: 16px;
+    transition: all .3s ease;
+}
+.close-button {
+    width: 80px;
+    margin-left: 2px;
+    cursor: pointer;
+    background: #ffffff;
+    border: 1.5px solid #427aa1;
+    color: #427aa1;
+    border-radius: 15px;
+    padding: 10px 0px;
+    font-size: 16px;
+    transition: all .3s ease;
+}
+
+.save-button:hover {
+    transform: scale(1.125); 
+    filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+}
+.close-button:hover {
+    transform: scale(1.125);
+    border: 1.5px solid #427aa1;
+    filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+}

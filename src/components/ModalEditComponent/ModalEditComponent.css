@@ -27,6 +27,38 @@ label{
     font-size: 20px;
 }
 
+.materia-dropdown {
+    margin: 15px 0 15px 0;
+}
+.materia-dropdown select {
+    font-family: 'NotoSansOriya-Medium', sans-serif;
+    outline: 0;
+    background-color: #ebf2fa;
+    width: 100%;
+    border: 1.5px solid #427aa1;
+    color: #427aa1;
+    border-radius: 20px;
+    padding: 15px 30px 15px 10px; 
+    box-sizing: border-box;
+    font-size: 15px;
+    cursor: pointer; 
+}
+.materia-dropdown select:focus {
+    border-color: #2e609c; 
+}
+
+/* .materia-dropdown::after {
+    content: ""; 
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}   */
+  
 .input-box {
     font-family: 'NotoSansOriya-Light', sans-serif;
     outline: 0;
@@ -40,14 +72,12 @@ label{
     box-sizing: border-box;
     font-size: 15px;
 }
-
 .btn-modal {
     padding: 10px 20px;
     display: block;
     margin: 100px auto 0;
     font-size: 18px;
 }
-
 .modal, .overlay {
     width: 100vw;
     height: 100vh;
@@ -57,7 +87,6 @@ label{
     bottom: 0;
     position: fixed;
 }
-
 .overlay {
     background: rgba(49,49,49,0.8);
 }

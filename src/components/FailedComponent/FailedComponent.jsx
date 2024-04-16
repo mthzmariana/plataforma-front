@@ -46,9 +46,9 @@ function FailedComponent(props) {
                 <tr key={name}>
                     <td>{name}</td>
                     <td>{email}</td>
-                    <td>{calificaciones['Bases de datos'] || '-'}</td>
-                    <td>{calificaciones['Modelado 3D'] || '-'}</td>
-                    <td className='td-last-rp'>{calificaciones['Programación web'] || '-'}</td>
+                    <td className={calificaciones['Bases de datos'] < 6 ? 'failed' : ''}>{calificaciones['Bases de datos'] || '-'}</td>
+                    <td className={calificaciones['Modelado 3D'] < 6 ? 'failed' : ''}>{calificaciones['Modelado 3D'] || '-'}</td>
+                    <td className={`td-last-rp ${calificaciones['Programación web'] < 6 ? 'failed' : ''}`}>{calificaciones['Programación web'] || '-'}</td>
                 </tr>
             );
         });

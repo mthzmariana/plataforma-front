@@ -11,7 +11,7 @@ function CourseComponent(props) {
   const [showModalEdit, setShowModalEdit] = useState(false);
   const [showModalDelete, setShowModalDelete] = useState(false);
   const [showModalNew, setShowModalNew] = useState(false);
-  const [actualID, setActualID] = useState("");
+  const [calificacionIdsUsuario, setCalificacionIdsUsuario] = useState([]);
 
   useEffect(() => {
     fetchCalificaciones();
@@ -30,15 +30,24 @@ function CourseComponent(props) {
     }
   };
 
-  const renderCalificaciones = () => {
+  const handleEditButtonClick = (calificacionIds) => {
+    console.log("IDs de calificaciones del usuario:", calificacionIds);
+    setShowModalEdit(true);
+    setCalificacionIdsUsuario(calificacionIds);
+  };
 
-    //Agrupando datos
+  const handleDeleteButtonClick = (calificacionIds) => {
+    console.log("IDs de calificaciones a eliminar:", calificacionIds);
+    setShowModalDelete(true);
+    setCalificacionIdsUsuario(calificacionIds);
+  };
+
+  const renderCalificaciones = () => {
     const test = Object.groupBy(
       calificaciones,
       (calificacion) => calificacion.userInfo._id
     );
 
-    //Creación de arreglo
     const newElements = [];
     for (const [key, value] of Object.entries(test)) {
       newElements.push({
@@ -47,20 +56,17 @@ function CourseComponent(props) {
       });
     }
 
-    //Generando filas para mi tabla
     const rows = newElements.map((element) => {
-      //Desestructuración de elemento y recupera usuario
       const { value } = element;
       const userInfo = value[0].userInfo; 
-      
-      //Creación de objeto donde las claves son las materias y los valores son las calificaciones
+
+      const calificacionIdsUsuario = value.map((calificacion) => calificacion.calificacionId);
+
       const calificacionesUsuario = value.reduce((acc, curr) => {
-        //Extrayendo materia y la usa como clave = La clave se establece en la propiedad de calificaccion
         acc[curr.matInfo.materia] = curr.calificacion;
         return acc;
       }, {});
 
-      //Construyendo filas
       return (
         <tr key={userInfo._id}>
           <td>{userInfo.name}</td>
@@ -71,16 +77,13 @@ function CourseComponent(props) {
           <td className="td-last-cr">
             <button
               className="iconButton"
-              onClick={() => {
-                setShowModalEdit(true);
-                console.log(element.key);
-              }}
+              onClick={() => handleEditButtonClick(calificacionIdsUsuario)}
             >
               <EditIcon />
             </button>
             <button
               className="iconButton"
-              onClick={() => setShowModalDelete(true)}
+              onClick={() => handleDeleteButtonClick(calificacionIdsUsuario)}
             >
               <DeleteIcon />
             </button>
@@ -115,9 +118,9 @@ function CourseComponent(props) {
           </tr>
         </tfoot>
       </table>
-      {showModalEdit && <ModalEdit setShowModalEdit={setShowModalEdit} />}{" "}
+      {showModalEdit && <ModalEdit setShowModalEdit={setShowModalEdit} calificacionIdsUsuario={calificacionIdsUsuario} />}
       {showModalDelete && (
-        <ModalDelete setShowModalDelete={setShowModalDelete} />
+        <ModalDelete setShowModalDelete={setShowModalDelete} calificacionIds={calificacionIdsUsuario} />
       )}
       <div className="div-button">
         <button className="button-lg" onClick={() => setShowModalNew(true)}>

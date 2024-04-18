@@ -1,127 +1,155 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./RegisterComponent.css";
 import iconLarge from "../../assets/iconLarge.png";
+import { useNavigate } from "react-router-dom";
 
-function RegisterComponent(props){
+function RegisterComponent(props) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [edad, setEdad] = useState(0);
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-    const [name, getName] = useState("");
-    const [email, getEmail] = useState("");
-    const [edad, getEdad] = useState(0);
-    const [password, getPassword] = useState("");
-    const getData = () => {
-
-        const objectToBack ={
-            name: name,
-            email: email,
-            edad: edad,
-            password: password
-        };
-
-        const settings ={
-            method: "POST",
-            headers:{
-                "Content-Type":"application/json",
-            },
-            body: JSON.stringify(objectToBack),
-        };
-
-        fetch("http://localhost:4000/register", settings)
-        .then((response)=>{
-            if(response.ok){
-            return response.json();
-            }
-            throw new Error("Error en la solicitud");
-        })
-        .then((data)=>{
-            console.log("Respuesta: ", data);
-            alert("Datos enviados exitosamente");
-        })
-        .catch((error)=>{
-            console.error("Error: ", error);
-        })
-
+  const sendData = () => {
+    const dataToSend = {
+      name: name,
+      email: email,
+      edad: edad,
+      password: password,
     };
 
-    return(
-        <div className="container-rg">
+    const settings = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataToSend),
+    };
 
-            <div className="form-rg prueba">
-                <h1>
-                    Crear cuenta nueva
-                </h1>
-                <div>
-                    <label>Nombre y apellido</label>
-                </div>
-                <div>
-                    <input className="input-box" 
-                    type="text" 
-                    name="inputName"
-                    id="inputName"
-                    placeholder="Katy Jones"
-                    onChange={(event)=>{
-                    getName(event.target.value);
-                    }}
-                    />
-                </div>
+    fetch("http://localhost:4000/register", settings)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("Error en la solicitud");
+      })
+      .then((data) => {
+        console.log("Respuesta: ", data);
+        alert("Datos enviados exitosamente");
+        navigate("/curso");
+      })
+      .catch((error) => {
+        console.error("Error: ", error);
+      });
+  };
 
-                <div>
-                    <label>Correo electrónico</label>
-                </div>
-                <div>
-                    <input className="input-box"
-                    type="email" 
-                    name="inputEmail"
-                    id="inputEmail"
-                    placeholder="example@email.com"
-                    onChange={(event)=>{
-                    getEmail(event.target.value);
-                    }}
-                    />
-                </div>
-    
-                <div>
-                    <label>Edad</label>
-                </div>
-                <div>
-                    <input className="input-box"
-                    type="number" 
-                    name="inputAge"
-                    id="inputAge" 
-                    placeholder="21"
-                    onChange={(event)=>{
-                    getEdad(event.target.value);
-                    }}
-                    />
-                </div>
-            
-                <div>
-                    <label>Contraseña</label>
-                </div>
-                <div>
-                    <input className="input-box" 
-                    type="password" 
-                    name="inputPassword"
-                    id="inputPassword" 
-                    placeholder="Introduce tu contraseña"
-                    onChange={(event)=>{
-                    getPassword(event.target.value);
-                    }}
-                    />
-                </div>
+  const handleLoginRedirect = () => {
+    navigate("/");
+  };
 
-                <div className="buttons">
-                    <button className='primary-button' onClick={()=> getData()}>Registrar</button>
+  const hablarAUsuario = (message) => {
+    const synth = window.speechSynthesis;
+    const utterThis = new SpeechSynthesisUtterance(message);
+    utterThis.lang = "es-ES";
+    synth.speak(utterThis);
+  };
 
-                    <button className='second-button'>Tengo cuenta</button>
-                </div>
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-            </div>
-            
-            <div>
-                <img className="img-lg" src={iconLarge} alt="Icono grande"/>
-            </div>
+    let error = false;
+
+    if (name.length < 5) {
+      error = true;
+      hablarAUsuario("No olvides introducir correctamente tu nombre y apellido");
+    }
+
+    if (password.length < 5) {
+      error = true;
+      hablarAUsuario("La contraseña debe tener al menos 5 caracteres");
+    }
+
+    if (!error) {
+      sendData();
+    }
+  };
+
+  return (
+    <div className="container-rg">
+      <div className="form-rg prueba">
+        <h1>Crear cuenta nueva</h1>
+        <div>
+          <label>Nombre y apellido</label>
         </div>
-    );
+        <div>
+          <input
+            className="input-box"
+            type="text"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            placeholder="Katy Jones"
+            required
+          />
+        </div>
+
+        <div>
+          <label>Correo electrónico</label>
+        </div>
+        <div>
+          <input
+            className="input-box"
+            type="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            placeholder="example@email.com"
+            required
+          />
+        </div>
+
+        <div>
+          <label>Edad</label>
+        </div>
+        <div>
+          <input
+            className="input-box"
+            type="number"
+            value={edad}
+            onChange={(event) => setEdad(event.target.value)}
+            placeholder="21"
+            required
+          />
+        </div>
+
+        <div>
+          <label>Contraseña</label>
+        </div>
+        <div>
+          <input
+            className="input-box"
+            type="password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+            placeholder="Introduce tu contraseña"
+            required
+          />
+        </div>
+
+        <div className="buttons">
+          <button className="button-regis" onClick={handleSubmit}>
+            Registrar
+          </button>
+
+          <button className="button-tengo" onClick={handleLoginRedirect}>
+            Tengo cuenta
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <img className="img-lg" src={iconLarge} alt="Icono grande" />
+      </div>
+    </div>
+  );
 }
 
 export default RegisterComponent;

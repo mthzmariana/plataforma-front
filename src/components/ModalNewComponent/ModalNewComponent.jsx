@@ -55,7 +55,7 @@ export default function ModalNew({ setShowModalNew }) {
     const handleGuardar = async () => {
         try {
             const userId = selectedUser;
-            const materiaIdBaseDatos = materias[0]._id; // Suponiendo que las materias están en el mismo orden que los inputs
+            const materiaIdBaseDatos = materias[0]._id; 
             const materiaIdModelado = materias[1]._id;
             const materiaIdProgramacion = materias[2]._id;
 

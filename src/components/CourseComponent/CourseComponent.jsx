@@ -5,6 +5,7 @@ import DeleteIcon from "../../icons/deleteIcon.jsx";
 import ModalEdit from "../ModalEditComponent/ModalEditComponent";
 import ModalDelete from "../ModalDeleteComponent/ModalDeleteComponent";
 import ModalNew from "../ModalNewComponent/ModalNewComponent";
+import { useNavigate } from 'react-router-dom';
 
 function CourseComponent(props) {
   const [calificaciones, setCalificaciones] = useState([]);
@@ -12,6 +13,7 @@ function CourseComponent(props) {
   const [showModalDelete, setShowModalDelete] = useState(false);
   const [showModalNew, setShowModalNew] = useState(false);
   const [calificacionIdsUsuario, setCalificacionIdsUsuario] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchCalificaciones();
@@ -42,8 +44,17 @@ function CourseComponent(props) {
     setCalificacionIdsUsuario(calificacionIds);
   };
 
+  const handleReprobadosClick = () => {
+    navigate("/reprobados"); 
+  };
+
+  const handleLoginClick = () => {
+    navigate("/"); 
+  };
+
   const renderCalificaciones = () => {
     const test = Object.groupBy(
+      
       calificaciones,
       (calificacion) => calificacion.userInfo._id
     );
@@ -97,6 +108,14 @@ function CourseComponent(props) {
 
   return (
     <div className="container-cr">
+      <div className="div-button-2">
+        <button className="primary-button" onClick={handleReprobadosClick}>
+          Reprobados
+        </button>
+        <button className="second-button" onClick={handleLoginClick}>
+          Cerrar sesión
+        </button>
+      </div>
       <div>
         <h1 className="h1-cr">Calificaciones</h1>
       </div>
@@ -123,9 +142,10 @@ function CourseComponent(props) {
         <ModalDelete setShowModalDelete={setShowModalDelete} calificacionIds={calificacionIdsUsuario} />
       )}
       <div className="div-button">
-        <button className="button-lg" onClick={() => setShowModalNew(true)}>
-          Crear nuevas calificaciones
+        <button className="primary-button" onClick={() => setShowModalNew(true)}>
+          Crear nueva
         </button>
+        
       </div>
       {showModalNew && <ModalNew setShowModalNew={setShowModalNew} />}
     </div>

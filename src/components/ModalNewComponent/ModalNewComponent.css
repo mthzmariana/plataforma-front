@@ -13,9 +13,6 @@ font-family: 'NotoSansOriya-Light';
 src: url('scr/Fonts/NotoSansOriya-Light.ttf') format('truetype');
 }
 
-/* body.active-modal {
-    overflow-y: hidden;
-} */
 h2{
     font-family: 'PlusJakartaSans-Bold', sans-serif;
     color:#427aa1;
@@ -81,9 +78,11 @@ label{
     min-width: 300px;
     margin-top: 50px;
 }
+
 .modal-buttons{
     text-align: right;
 }
+
 .save-button {
     width: 80px;
     margin-right: 2px;
@@ -96,6 +95,7 @@ label{
     font-size: 16px;
     transition: all .3s ease;
 }
+
 .close-button {
     width: 80px;
     margin-left: 2px;
@@ -113,6 +113,7 @@ label{
     transform: scale(1.125); 
     filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
 }
+
 .close-button:hover {
     transform: scale(1.125);
     border: 1.5px solid #427aa1;

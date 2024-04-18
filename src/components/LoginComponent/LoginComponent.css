@@ -8,6 +8,7 @@
         height: 100vh;
         flex-wrap: wrap;
     }
+
     .form-sm{
         flex: 1;
         z-index: 1;
@@ -16,11 +17,50 @@
         outline: 0;
         text-align: left;
     }
+
     .img-sm{
         text-align: center;
     }
+
     .h1-sm{
         font-family: 'PlusJakartaSans-Bold', sans-serif;
         color:#427aa1;
         text-align: center;
+    }
+
+    .button-iniciar {
+        width: 48%;
+        margin-right: 2px;
+        cursor: pointer;
+        background: #427aa1;
+        color: #e3f2fd;
+        border: none;
+        border-radius: 15px;
+        padding: 10px 0px;
+        font-size: 16px;
+        transition: all .3s ease;
+    }
+
+    .button-iniciar:hover {
+        transform: scale(1.125); 
+        filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+    }
+
+    .button-crearc {
+        width: 48%;
+        margin-left: 2px;
+        cursor: pointer;
+        background: #ffffff;
+        border: 1.5px solid #427aa1;
+        color: #427aa1;
+        border-radius: 15px;
+        padding: 10px 0px;
+        font-size: 16px;
+        transition: all .3s ease;
+    }
+    
+    .button-crearc:hover {
+        transform: scale(1.125);
+        border: 1.5px solid #427aa1;
+        filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
     }

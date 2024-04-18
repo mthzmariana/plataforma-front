@@ -18,6 +18,7 @@
         padding: 50px;
         text-align: center;
     }
+
     .table-cr {
         width: 900px;
         margin: auto;
@@ -35,9 +36,11 @@
         color: #fff;
         border: none;
     }
+
     .thead-tr-th-last{
         text-align: center;
     }
+
     tbody tr:hover {
         background-color: #e4eef9; 
         cursor: pointer;
@@ -51,6 +54,7 @@
     th:last-child{
         padding: 0;
     }
+
     .td-last-cr {
         padding: 0 0 0 20px;
     }
@@ -85,21 +89,27 @@
         margin: 4px;
         display: inline-block;
         cursor: pointer;
-        /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
         transition: background-color 0.3s ease;
     }
+
     .iconButton:hover {
         transform: scale(1.125);
         filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
-        /* background-color: #ebf2fa; */
     }
     .iconButton svg {
         vertical-align: middle;
-        /* margin-right: 8px; */
     }
+
     .div-button{
+        margin-top: 10px;
         text-align: center;
     }
+
+    .div-button-2{
+        padding: 10px;
+        text-align: right;
+    }
+
     .button-lg{
         width: 220px;
         margin: 20px;
@@ -112,7 +122,44 @@
         font-size: 16px;
         transition: all .3s ease;
     }
+
     .button-lg:hover {
+        transform: scale(1.125); 
+        filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+    }
+
+    .primary-button {
+        width: 8%;
+        margin-right: 2px;
+        cursor: pointer;
+        background: #427aa1;
+        color: #e3f2fd;
+        border: none;
+        border-radius: 15px;
+        padding: 10px 0px;
+        font-size: 16px;
+        transition: all .3s ease;
+    }
+
+    .primary-button:hover {
+        transform: scale(1.125); 
+        filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+    }
+
+    .second-button {
+        width: 8%;
+        margin-left: 2px;
+        cursor: pointer;
+        background: #ffffff;
+        border: 1.5px solid #427aa1;
+        color: #427aa1;
+        border-radius: 15px;
+        padding: 10px 0px;
+        font-size: 16px;
+        transition: all .3s ease;
+    }
+    
+    .second-button:hover {
         transform: scale(1.125); 
         filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
     }

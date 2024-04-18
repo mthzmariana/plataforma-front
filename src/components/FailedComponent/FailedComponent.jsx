@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import "./FailedComponent.css";
+import { useNavigate } from 'react-router-dom';
 
 function FailedComponent(props) {
     const [calificaciones, setCalificaciones] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchCalificaciones();
     }, []);
  
+    const handleEditClick = () => {
+        navigate("/curso");
+    };
+    
+    const handleLoginClick = () => {
+        navigate("/"); 
+    };
+
     const fetchCalificaciones = async () => {
         try {
             const response = await fetch('http://localhost:4000/calificaciones');
@@ -58,6 +68,10 @@ function FailedComponent(props) {
 
     return (
         <div className='container-rp'>
+            <div className='div-button-3'>
+                <button className='button-edit' onClick={handleEditClick}>Calificaciones</button>
+                <button className='button-session' onClick={handleLoginClick}>Cerrar sesión</button>
+            </div>
             <div>
                 <h1 className='h1-rp'>Alumnos con materias reprobadas</h1>
             </div>
@@ -80,7 +94,6 @@ function FailedComponent(props) {
                     </tr>
                 </tfoot>
             </table>
-
         </div>
     );
 }
